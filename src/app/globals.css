@@ -19,16 +19,54 @@
   }
 }
 
-/* body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
-/* Rakhi Theme */
 body {
   background: #09090b;
 }
 
 .swiper-pagination-bullet-active {
   background: linear-gradient(135deg, #ef4444, #f59e0b) !important;
+}
+
+/* FESTIVE GLOBAL THEME */
+.festive-bg {
+  position: relative;
+  background:
+    radial-gradient(circle at top left, rgba(245, 158, 11, 0.15), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(220, 38, 38, 0.15), transparent 35%),
+    linear-gradient(135deg, #2b0a0a 0%, #09090b 45%, #3b0a0a 100%);
+}
+
+.festive-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255, 215, 0, 0.6) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: 0.18;
+  animation: sparkleMove 14s linear infinite;
+  pointer-events: none;
+}
+
+.festive-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+@keyframes sparkleMove {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }

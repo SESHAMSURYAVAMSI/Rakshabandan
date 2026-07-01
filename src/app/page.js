@@ -1,89 +1,84 @@
-"use client"
+"use client";
 
-import { useState, useEffect, useRef } from "react"
-import { AnimatePresence, motion } from "motion/react"
-import { Volume2, VolumeX } from "lucide-react"
+import { useState, useEffect, useRef } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { Volume2, VolumeX } from "lucide-react";
 
-import Loader from "./components/Loader"
-import Countdown from "./components/Countdown"
-import Celebration from "./components/Celebration"
-import HappyRakshaBandhan from "./components/HappyRakshaBandhan"
-import PhotoGallery from "./components/PhotoGallery"
-import Letter from "./components/Letter"
+import Loader from "./components/Loader";
+import Countdown from "./components/Countdown";
+import Celebration from "./components/Celebration";
+import HappyRakshaBandhan from "./components/HappyRakshaBandhan";
+import PhotoGallery from "./components/PhotoGallery";
+import BondAnimation from "./components/BondAnimation";
+import Letter from "./components/Letter";
 
 export default function RakshaBandhanApp() {
-  const [currentScreen, setCurrentScreen] = useState(0)
-  const [isLoading, setIsLoading] = useState(true)
-  const [isMuted, setIsMuted] = useState(false)
+  const [currentScreen, setCurrentScreen] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
 
-  const audioRef = useRef(null)
+  const audioRef = useRef(null);
 
-  // Countdown date
   const getNextRakshaBandhan = () => {
-    const now = new Date()
-    const currentYear = now.getFullYear()
+    const now = new Date();
+    const currentYear = now.getFullYear();
 
     // Set your Rakhi date here
     // let rakhiDate = new Date(`${currentYear}-08-09T00:00:00`)
-     let rakhiDate = new Date(`${currentYear}-06-16T00:00:00`)
-
+    let rakhiDate = new Date(`${currentYear}-06-16T00:00:00`);
     if (now.getTime() > rakhiDate.getTime()) {
       //  rakhiDate = new Date(`${currentYear}-08-09T00:00:00`)
-       rakhiDate = new Date(`${currentYear}-06-16T00:00:00`)
+      rakhiDate = new Date(`${currentYear}-06-16T00:00:00`);
       // rakhiDate = new Date(`${currentYear + 1}-06-16T00:00:00`)
     }
+    return rakhiDate;
+  };
 
-
-    return rakhiDate
-  }
-
-  const rakhiDate = getNextRakshaBandhan()
+  const rakhiDate = getNextRakshaBandhan();
 
   const [isFestivalStarted, setIsFestivalStarted] = useState(
-    new Date().getTime() >= rakhiDate.getTime()
-  )
+    new Date().getTime() >= rakhiDate.getTime(),
+  );
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 3000)
+      setIsLoading(false);
+    }, 3000);
 
-    return () => clearTimeout(timer)
-  }, [])
+    return () => clearTimeout(timer);
+  }, []);
 
   const playMusic = () => {
-    const audio = audioRef.current
-    if (!audio) return
+    const audio = audioRef.current;
+    if (!audio) return;
 
-    audio.volume = 0
+    audio.volume = 0;
 
     audio.play().catch((err) => {
-      console.log("Audio blocked:", err)
-    })
+      console.log("Audio blocked:", err);
+    });
 
-    let vol = 0
+    let vol = 0;
     const interval = setInterval(() => {
       if (vol < 1) {
-        vol += 0.1
-        audio.volume = vol
+        vol += 0.1;
+        audio.volume = vol;
       } else {
-        clearInterval(interval)
+        clearInterval(interval);
       }
-    }, 200)
-  }
+    }, 200);
+  };
 
   const toggleMusic = () => {
-    const audio = audioRef.current
-    if (!audio) return
+    const audio = audioRef.current;
+    if (!audio) return;
 
-    audio.muted = !audio.muted
-    setIsMuted(audio.muted)
-  }
+    audio.muted = !audio.muted;
+    setIsMuted(audio.muted);
+  };
 
   const renderScreen = () => {
-    if (isLoading) {
-      return <Loader key="loader" />
-    }
+    if (isLoading) return <Loader key="loader" />;
 
     if (currentScreen === 0) {
       if (!isFestivalStarted) {
@@ -93,46 +88,56 @@ export default function RakshaBandhanApp() {
             birthdayDate={rakhiDate}
             onComplete={() => setIsFestivalStarted(true)}
           />
-        )
+        );
       }
 
       return (
         <Celebration
           key="celebration"
           onNext={() => {
-            playMusic()
-            setCurrentScreen(1)
+            playMusic();
+            setCurrentScreen(1);
           }}
         />
-      )
+      );
     }
 
     if (currentScreen === 1) {
       return (
-        <HappyRakshaBandhan
-          key="happy"
-          onNext={() => setCurrentScreen(2)}
-        />
-      )
+        <HappyRakshaBandhan key="happy" onNext={() => setCurrentScreen(2)} />
+      );
     }
 
     if (currentScreen === 2) {
-      return (
-        <PhotoGallery
-          key="gallery"
-          onNext={() => setCurrentScreen(3)}
-        />
-      )
+      return <PhotoGallery key="gallery" onNext={() => setCurrentScreen(3)} />;
     }
 
-    return <Letter key="letter" />
-  }
+    if (currentScreen === 3) {
+      return <BondAnimation key="bond" onNext={() => setCurrentScreen(4)} />;
+    }
+
+    return <Letter key="letter" />;
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-950/30 via-black to-orange-950/30 overflow-hidden relative">
+    <div className="min-h-screen festive-bg overflow-hidden relative">
       <audio ref={audioRef} loop>
-        <source src="/audio/jaanu.mp3" type="audio/mpeg" />
+        <source src="/audio/rakshabandhan.mp3" type="audio/mpeg" />
       </audio>
+
+      {/* Diyas */}
+      <div className="absolute top-8 left-6 text-4xl md:text-6xl opacity-70 animate-pulse z-10">
+        🪔
+      </div>
+      <div className="absolute top-8 right-20 text-4xl md:text-6xl opacity-70 animate-pulse z-10">
+        🪔
+      </div>
+      <div className="absolute bottom-8 left-10 text-4xl md:text-6xl opacity-70 animate-pulse z-10">
+        🪔
+      </div>
+      <div className="absolute bottom-8 right-6 text-4xl md:text-6xl opacity-70 animate-pulse z-10">
+        🪔
+      </div>
 
       <button
         onClick={toggleMusic}
@@ -141,9 +146,7 @@ export default function RakshaBandhanApp() {
         {isMuted ? <VolumeX /> : <Volume2 />}
       </button>
 
-      <AnimatePresence mode="wait">
-        {renderScreen()}
-      </AnimatePresence>
+      <AnimatePresence mode="wait">{renderScreen()}</AnimatePresence>
 
       <motion.div
         initial={{ x: 100, opacity: 0 }}
@@ -154,5 +157,5 @@ export default function RakshaBandhanApp() {
         @Raksha Bandhan 💖
       </motion.div>
     </div>
-  )
+  );
 }
