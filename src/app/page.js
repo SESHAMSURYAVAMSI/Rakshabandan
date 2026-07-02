@@ -11,6 +11,8 @@ import HappyRakshaBandhan from "./components/HappyRakshaBandhan";
 import PhotoGallery from "./components/PhotoGallery";
 import BondAnimation from "./components/BondAnimation";
 import Letter from "./components/Letter";
+// import FestiveCursor from "./components/FestiveCursor";
+import SparkParticles from "./components/SparkParticles";
 
 export default function RakshaBandhanApp() {
   const [currentScreen, setCurrentScreen] = useState(0);
@@ -24,10 +26,10 @@ export default function RakshaBandhanApp() {
     const currentYear = now.getFullYear();
 
     // Set your Rakhi date here
-    // let rakhiDate = new Date(`${currentYear}-08-09T00:00:00`)
+    // let rakhiDate = new Date(`${currentYear}-08-28T00:00:00`)
     let rakhiDate = new Date(`${currentYear}-06-16T00:00:00`);
     if (now.getTime() > rakhiDate.getTime()) {
-      //  rakhiDate = new Date(`${currentYear}-08-09T00:00:00`)
+      //  rakhiDate = new Date(`${currentYear}-08-28T00:00:00`)
       rakhiDate = new Date(`${currentYear}-06-16T00:00:00`);
       // rakhiDate = new Date(`${currentYear + 1}-06-16T00:00:00`)
     }
@@ -122,7 +124,7 @@ export default function RakshaBandhanApp() {
   return (
     <div className="min-h-screen festive-bg overflow-hidden relative">
       <audio ref={audioRef} loop>
-        <source src="/audio/rakshabandhan.mp3" type="audio/mpeg" />
+        <source src="/audio/jaanu.mp3" type="audio/mpeg" />
       </audio>
 
       {/* Diyas */}
@@ -139,13 +141,20 @@ export default function RakshaBandhanApp() {
         🪔
       </div>
 
-      <button
+      {/* <button
         onClick={toggleMusic}
         className="fixed top-5 right-5 z-50 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full p-3 text-white"
       >
         {isMuted ? <VolumeX /> : <Volume2 />}
+      </button> */}
+      <button
+        onClick={toggleMusic}
+        className="fixed top-5 right-5 z-50 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-xl border border-yellow-300/40 rounded-full p-4 text-yellow-200 shadow-[0_0_30px_rgba(245,158,11,0.25)] hover:scale-110 transition-all duration-300"
+      >
+        {isMuted ? <VolumeX /> : <Volume2 />}
       </button>
-
+      <SparkParticles />
+      {/* <FestiveCursor /> */}
       <AnimatePresence mode="wait">{renderScreen()}</AnimatePresence>
 
       <motion.div
@@ -154,7 +163,8 @@ export default function RakshaBandhanApp() {
         transition={{ duration: 1 }}
         className="fixed bottom-4 right-4 text-white/40 text-sm"
       >
-        @Raksha Bandhan 💖
+        {/* @Raksha Bandhan 💖 */}
+        Made with ❤️ for my Sister
       </motion.div>
     </div>
   );

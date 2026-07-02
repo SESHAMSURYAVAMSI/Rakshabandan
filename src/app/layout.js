@@ -1,5 +1,10 @@
 import "./globals.css";
 import Script from "next/script";
+import { Cinzel } from "next/font/google";
+
+const cinzel = Cinzel({
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Happy Raksha Bandhan 💖",
@@ -10,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="antialiased">
+      <body className={`${cinzel.className} antialiased`}>
         {children}
 
         <Script id="ms-clarity" strategy="afterInteractive">
