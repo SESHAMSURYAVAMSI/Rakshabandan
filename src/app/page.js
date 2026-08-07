@@ -124,7 +124,7 @@ export default function RakshaBandhanApp() {
   return (
     <div className="min-h-screen festive-bg overflow-hidden relative">
       <audio ref={audioRef} loop>
-        <source src="/audio/jaanu.mp3" type="audio/mpeg" />
+        {/* <source src="/audio/jaanu.mp3" type="audio/mpeg" /> */}
       </audio>
 
       {/* Diyas */}
