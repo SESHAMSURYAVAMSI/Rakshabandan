@@ -91,3 +91,102 @@ export default function FireworksCelebration({ onNext }) {
     </div>
   )
 }
+
+
+// "use client"
+
+// import { useEffect, useRef, useState } from "react"
+// import { motion } from "framer-motion"
+
+// export default function FireworksCelebration({ onNext }) {
+//   const canvasRef = useRef(null)
+//   const fireworksRef = useRef([])
+//   const animationRef = useRef(null)
+//   const [ready, setReady] = useState(false)
+
+//   useEffect(() => {
+//     const canvas = canvasRef.current
+//     if (!canvas) return
+//     const ctx = canvas.getContext("2d")
+//     let width = window.innerWidth
+//     let height = window.innerHeight
+
+//     const resize = () => {
+//       width = window.innerWidth
+//       height = window.innerHeight
+//       const dpr = Math.min(window.devicePixelRatio || 1, 2)
+//       canvas.width = width * dpr
+//       canvas.height = height * dpr
+//       canvas.style.width = `${width}px`
+//       canvas.style.height = `${height}px`
+//       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+//     }
+
+//     const burst = (x, y) => {
+//       const colors = ["#ffd166", "#ff6b6b", "#ff9f1c", "#f72585", "#ffffff"]
+//       const particles = Array.from({ length: width < 768 ? 42 : 72 }, (_, i) => {
+//         const angle = (Math.PI * 2 * i) / 72 + Math.random() * 0.15
+//         const speed = 1.8 + Math.random() * 4.2
+//         return { x, y, vx: Math.cos(angle) * speed, vy: Math.sin(angle) * speed, life: 1, color: colors[i % colors.length], size: 1.5 + Math.random() * 2.5 }
+//       })
+//       fireworksRef.current.push({ x, y, particles })
+//     }
+
+//     const launch = (x = width * (0.2 + Math.random() * 0.6), y = height * (0.2 + Math.random() * 0.45)) => burst(x, y)
+//     resize()
+//     launch(width * 0.5, height * 0.28)
+//     const auto = setInterval(() => launch(), 1150)
+//     setTimeout(() => setReady(true), 1500)
+
+//     const draw = () => {
+//       ctx.fillStyle = "rgba(3, 3, 10, 0.22)"
+//       ctx.fillRect(0, 0, width, height)
+//       fireworksRef.current.forEach((burstItem) => {
+//         burstItem.particles.forEach((p) => {
+//           p.x += p.vx
+//           p.y += p.vy
+//           p.vy += 0.035
+//           p.vx *= 0.988
+//           p.life -= 0.012
+//           if (p.life > 0) {
+//             ctx.globalAlpha = p.life
+//             ctx.fillStyle = p.color
+//             ctx.shadowBlur = 12
+//             ctx.shadowColor = p.color
+//             ctx.beginPath()
+//             ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2)
+//             ctx.fill()
+//           }
+//         })
+//       })
+//       ctx.globalAlpha = 1
+//       ctx.shadowBlur = 0
+//       fireworksRef.current = fireworksRef.current.filter((b) => b.particles.some((p) => p.life > 0))
+//       animationRef.current = requestAnimationFrame(draw)
+//     }
+//     draw()
+
+//     const handleClick = (event) => burst(event.clientX, event.clientY)
+//     window.addEventListener("resize", resize)
+//     window.addEventListener("pointerdown", handleClick)
+//     return () => {
+//       clearInterval(auto)
+//       cancelAnimationFrame(animationRef.current)
+//       window.removeEventListener("resize", resize)
+//       window.removeEventListener("pointerdown", handleClick)
+//     }
+//   }, [])
+
+//   return (
+//     <section className="fireworks-screen">
+//       <canvas ref={canvasRef} className="fireworks-canvas" />
+//       <div className="fireworks-vignette" />
+//       <motion.div className="fireworks-copy" initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.6, duration: 1 }}>
+//         <p className="eyebrow">For my forever little sister</p>
+//         <h1>Happy Raksha Bandhan, Jaanu ❤️</h1>
+//         <p>Tap anywhere to make a wish ✨</p>
+//         {ready && <motion.button className="premium-button" onClick={(e) => { e.stopPropagation(); onNext() }} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.2 }}>Open Your Letter 💌</motion.button>}
+//       </motion.div>
+//     </section>
+//   )
+// }

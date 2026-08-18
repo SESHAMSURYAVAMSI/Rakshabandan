@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 export default function SparkParticles() {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      {[...Array(30)].map((_, i) => (
+      {[...Array(10)].map((_, i) => (
         <motion.div
           key={i}
           className="absolute text-yellow-300"
@@ -28,7 +28,8 @@ export default function SparkParticles() {
             delay: Math.random() * 2,
           }}
         >
-          ✨
+         ✨
+          
         </motion.div>
       ))}
     </div>
