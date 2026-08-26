@@ -48,7 +48,8 @@ export default function PhotoGallery({ onNext }) {
       </div>
 
       {/* Photo Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-full">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl w-170px"> 
+        {/* this line for photo frame */}
         {photos.map((photo, index) => (
           <motion.div
             key={photo.id}
@@ -60,7 +61,7 @@ export default function PhotoGallery({ onNext }) {
             <img
               src={photo.src}
               alt={photo.caption}
-              className="w-full h-[250px] md:h-[320px] object-cover rounded-lg"
+              className="w-full h-[250px] md:h-[320px] object-contain rounded-lg"
             />
 
             <p className="text-gray-700 text-center mt-4 font-semibold">
