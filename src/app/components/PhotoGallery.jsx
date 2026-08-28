@@ -18,16 +18,16 @@ export default function PhotoGallery({ onNext }) {
     },
     {
       id: 3,
-      src: "/images/3.png",
+      src: "/images/3.jpeg",
       caption: "Forever Bond ✨",
       rotate: "-rotate-3",
     },
-    {
-      id: 4,
-      src: "/images/4.jpeg",
-      caption: "Special Memories 💖",
-      rotate: "rotate-3",
-    },
+    // {
+    //   id: 4,
+    //   src: "/images/4.jpeg",
+    //   caption: "Special Memories 💖",
+    //   rotate: "rotate-3",
+    // },
   ]
 
   return (
@@ -38,7 +38,7 @@ export default function PhotoGallery({ onNext }) {
     >
       <div className="text-center mb-10">
         <h1 className="text-3xl md:text-6xl font-bold bg-gradient-to-r from-red-400 via-orange-400 to-yellow-300 bg-clip-text text-transparent mb-4">
-          Our Precious Memories 📸
+          Precious Memories with Surya Only 📸
         </h1>
 
         <p className="text-orange-100 text-sm md:text-xl max-w-2xl mx-auto">

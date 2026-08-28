@@ -118,6 +118,22 @@ For supporting me, understanding me, and caring for me.
 No matter how much we fight or argue,
 our bond will always remain strong ❤️
 
+Actually direct ga vachi surprise idham anukoni chala plans vesa kaani nuvvu ekkada vunnavo teledu 
+ina sudden ga interview arrange chesaru soo dont worry na job location chennai loney try chestunna 😂 
+
+Nijaniki nitho matladali ani chala time anukunna but a chance naku raaledu
+kanisam ila ina na maatalu niku reach avuthai ani anukuntunna...... 
+
+Infact nuvvu deggara vuntey happyness thappa inkemi teledu kaani nuvvu dhuram ithey aa badha thappa inkemi migalaledu naaku 😔
+Eee time idi chepochoo ledho naku teledu kaani cheptunna ninnu istapaddam nerchukunna but marchipovatam matram eppatiki nerchukoolenu... 
+
+kaalam marochu alaney situatons change avvochu  kaani ni midam istam matram eppatiki maaradu... 
+Sare inka ninnu ekkuva badhapettanu naku antha time kuda ledu anukooo😂 
+Bhayapettali ani kaadu na reports niki mail chesa i hope chusavu anukuntunna prof lenidi evaru nammaru kada adey anukoo.. 
+
+Inka manchiga wishes chedham anukunna but nuvvu reply ivvaledu ga andukey one nyt batting chesa ihope niku idi nachindi anukuntunna ... 
+Incase interview clear ithey call chestha appudu ina answer chesthavu ani koorukuntunna...🙏
+
 You bring happiness, warmth, and joy into my life.
 
 I pray for your happiness, success, health, and endless smiles.
