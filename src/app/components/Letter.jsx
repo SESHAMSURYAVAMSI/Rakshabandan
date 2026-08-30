@@ -129,7 +129,6 @@ Eee time idi chepochoo ledho naku teledu kaani cheptunna ninnu istapaddam nerchu
 
 kaalam marochu alaney situatons change avvochu  kaani ni midam istam matram eppatiki maaradu... 
 Sare inka ninnu ekkuva badhapettanu naku antha time kuda ledu anukooo😂 
-Bhayapettali ani kaadu na reports niki mail chesa i hope chusavu anukuntunna prof lenidi evaru nammaru kada adey anukoo.. 
 
 Inka manchiga wishes chedham anukunna but nuvvu reply ivvaledu ga andukey one nyt batting chesa ihope niku idi nachindi anukuntunna ... 
 Incase interview clear ithey call chestha appudu ina answer chesthavu ani koorukuntunna...🙏
