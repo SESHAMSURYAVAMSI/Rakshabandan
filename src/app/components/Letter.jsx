@@ -133,6 +133,8 @@ Sare inka ninnu ekkuva badhapettanu naku antha time kuda ledu anukooo😂
 Inka manchiga wishes chedham anukunna but nuvvu reply ivvaledu ga andukey one nyt batting chesa ihope niku idi nachindi anukuntunna ... 
 Incase interview clear ithey call chestha appudu ina answer chesthavu ani koorukuntunna...🙏
 
+And main thing next rakhi ki niko surprise vuntundi memu 4 members vachi ninnu kalustamu a small suspense heeeee......
+
 You bring happiness, warmth, and joy into my life.
 
 I pray for your happiness, success, health, and endless smiles.
